@@ -1,0 +1,14 @@
+body{
+ background: #ebeae7;   
+}
+.header-text{
+ text-align: center;
+    text-shadow: 2px 2px 5px #aa9d9d;
+}
+
+.header-text>h1{
+    text-shadow: 2px 2px 5px #495963, -2px 0 2px #2D3C44;
+}
+.ava{
+ width: 100px;   
+}
