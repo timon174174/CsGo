@@ -61,8 +61,8 @@ public class MainController {
             System.out.println("avatarFull: " + getCharacterDataFromElement(line));
             user.setImageUrl(getCharacterDataFromElement(line));
         }
+        if (user.getName() != null && !user.getName().isEmpty()){userRepository.save(user);}
 
-        userRepository.save(user);
         return "createUser";
     }
 
