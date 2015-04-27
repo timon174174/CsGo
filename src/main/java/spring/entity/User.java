@@ -1,6 +1,7 @@
 package spring.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.List;
@@ -9,10 +10,11 @@ import java.util.List;
 public class User {
 
     @Id
+    @GeneratedValue
     private long id;
 
     private String name;
-    private byte[] image;
+    private String imageUrl;
 
     @ManyToMany(mappedBy = "userList")
     private List<Weapon> weaponList;
@@ -45,12 +47,13 @@ public class User {
         this.id = id;
     }
 
-    public byte[] getImage() {
-        return image;
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {

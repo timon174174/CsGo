@@ -7,5 +7,6 @@
 
     <!-- Default Main Template -->
     <definition name="index" template="/WEB-INF/index.jsp"/>
+    <definition name="createUser" template="/WEB-INF/create-user.jsp"/>
 
 </tiles-definitions>

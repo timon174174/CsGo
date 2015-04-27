@@ -2,6 +2,7 @@ package spring.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import java.util.List;
 
@@ -13,15 +14,13 @@ public class Weapon {
 
     private String name;
 
-    private byte[] image;
+    private String imageUrl;
 
     private double price;
 
-    @ManyToMany(mappedBy = "weaponList")
+    @ManyToMany
+    @JoinTable
     private List<User>userList;
-
-
-
 
     public List<User> getUserList() {
         return userList;
@@ -47,19 +46,19 @@ public class Weapon {
         this.name = name;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
     public double getPrice() {
         return price;
     }
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

@@ -3,6 +3,7 @@ package spring.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import java.util.List;
 
@@ -12,7 +13,8 @@ public class Game {
     @Id
     private long id;
 
-    @ManyToMany(mappedBy = "gameList")
+    @ManyToMany()
+    @JoinTable
     private List<User> userList;
 
     public long getId() {
