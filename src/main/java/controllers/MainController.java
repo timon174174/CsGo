@@ -3,6 +3,7 @@ package controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.w3c.dom.*;
@@ -20,6 +21,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.List;
 
 
 @Controller
@@ -74,5 +76,12 @@ public class MainController {
             return cd.getData();
         }
         return "";
+    }
+
+    @RequestMapping("/show_all_user")
+    private String showAllUsers(ModelMap modelMap) {
+        List<User> userList = userRepository.findAll();
+        modelMap.addAttribute("users" , userList);
+        return "show_users";
     }
 }
